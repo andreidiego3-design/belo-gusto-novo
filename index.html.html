@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bello Gusto Ribeirão | Pizzaria em Ribeirão Preto - Cristo Redentor</title>
+<meta name="description" content="Bello Gusto Ribeirão: pizzaria no Jardim Cristo Redentor, Ribeirão Preto - SP. Peça pelo WhatsApp, de segunda a sábado, das 17h à 00h.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --charcoal:#221711;
+    --charcoal-2:#2b1d15;
+    --cream:#f8f0e0;
+    --cream-dim:#e9dcc2;
+    --tomato:#c1381f;
+    --tomato-dark:#96291a;
+    --gold:#d3a04a;
+    --gold-dim:#a67f3c;
+    --basil:#4c5c3c;
+    --sand:#efe6d3;
+    --sand-2:#e4d8bd;
+    --ink:#2a2018;
+    --whatsapp:#3ba55a;
+
+    --serif: "Fraunces", serif;
+    --sans: "Work Sans", sans-serif;
+
+    --maxw: 1180px;
+    --radius: 18px;
+    --radius-sm: 10px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    background:var(--sand);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  h1,h2,h3,h4{font-family:var(--serif);margin:0;font-weight:600;color:var(--charcoal);}
+  p{margin:0;}
+  section{padding:88px 0;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    color:var(--tomato-dark);font-size:1rem;
+  }
+  .tag::before{content:"";width:22px;height:1.5px;background:var(--gold);display:inline-block;}
+
+  h2.section-title{
+    font-size:clamp(2rem, 4vw, 2.9rem);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+    margin-top:10px;
+  }
+  .section-lead{
+    font-size:1.05rem;
+    color:#5a4d3e;
+    max-width:52ch;
+    margin-top:16px;
+  }
+  .section-head{margin-bottom:48px;}
+  .section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+  .section-head.center h2{margin-left:auto;margin-right:auto;}
+  .section-head.center .section-lead{margin-left:auto;margin-right:auto;}
+
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 28px;
+    border-radius:100px;
+    font-family:var(--sans);font-weight:600;font-size:0.98rem;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--tomato);color:var(--cream);box-shadow:0 10px 24px -10px rgba(193,56,31,.55);}
+  .btn-primary:hover{background:var(--tomato-dark);}
+  .btn-outline{border-color:var(--gold);color:var(--charcoal);background:transparent;}
+  .btn-outline.on-dark{border-color:var(--gold);color:var(--cream);}
+  .btn-outline:hover{background:var(--gold);border-color:var(--gold);color:var(--charcoal);}
+  .btn-ghost{background:var(--cream);color:var(--charcoal);}
+  .btn-ghost:hover{background:var(--cream-dim);}
+  .btn svg{width:19px;height:19px;flex-shrink:0;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(34,23,17,.72);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(211,160,74,.18);
+    transition:background .25s ease;
+  }
+  .nav{
+    max-width:var(--maxw);margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{
+    font-family:var(--serif);font-style:italic;font-weight:600;
+    font-size:1.35rem;color:var(--cream);letter-spacing:.01em;
+  }
+  .logo span{color:var(--gold);font-style:normal;}
+  .nav-links{
+    display:none;
+    align-items:center;gap:34px;
+  }
+  .nav-links a{
+    color:var(--cream-dim);font-size:.96rem;font-weight:500;
+    position:relative;padding:6px 0;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;
+    background:var(--gold);transform:scaleX(0);transform-origin:left;
+    transition:transform .22s ease;
+  }
+  .nav-links a:hover{color:var(--cream);}
+  .nav-links a:hover::after{transform:scaleX(1);}
+  .nav-cta{display:none;}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+
+  .burger{
+    background:none;border:none;cursor:pointer;padding:8px;
+    display:flex;flex-direction:column;gap:5px;
+  }
+  .burger span{width:24px;height:2px;background:var(--cream);display:block;transition:.25s;}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-menu{
+    max-height:0;overflow:hidden;
+    background:var(--charcoal-2);
+    transition:max-height .3s ease;
+  }
+  .mobile-menu.open{max-height:420px;}
+  .mobile-menu ul{padding:10px 24px 22px;display:flex;flex-direction:column;gap:4px;}
+  .mobile-menu a{
+    color:var(--cream-dim);padding:12px 4px;font-size:1.02rem;
+    border-bottom:1px solid rgba(211,160,74,.12);
+  }
+  .mobile-menu .btn{margin-top:14px;width:100%;}
+
+  @media(min-width:960px){
+    .nav-links{display:flex;}
+    .nav-cta{display:inline-flex;}
+    .burger{display:none;}
+    .mobile-menu{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;align-items:flex-end;
+    background:linear-gradient(180deg, rgba(24,15,10,.35) 0%, rgba(20,13,9,.55) 45%, rgba(15,10,7,.94) 100%),
+      url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    padding-top:110px;
+  }
+  .hero-inner{
+    max-width:var(--maxw);margin:0 auto;padding:0 24px 72px;
+    width:100%;
+  }
+  .hero-content{max-width:640px;}
+  .hero .tag{color:var(--gold);}
+  .hero .tag::before{background:var(--tomato);}
+  .hero h1{
+    font-size:clamp(2.5rem, 7vw, 4.4rem);
+    color:var(--cream);
+    line-height:1.05;
+    letter-spacing:-0.015em;
+    margin-top:16px;
+    font-weight:500;
+  }
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--gold);}
+  .hero-text{
+    color:var(--cream-dim);
+    font-size:1.12rem;
+    max-width:46ch;
+    margin-top:22px;
+    line-height:1.6;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px;}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:28px;
+    margin-top:56px;padding-top:28px;
+    border-top:1px solid rgba(211,160,74,.25);
+  }
+  .hero-meta div{color:var(--cream-dim);font-size:.88rem;}
+  .hero-meta strong{display:block;color:var(--cream);font-family:var(--serif);font-size:1.15rem;font-weight:500;margin-bottom:2px;}
+
+  /* ---------- WHATSAPP STRIP ---------- */
+  .wa-strip{
+    background:var(--tomato);
+    padding:56px 0;
+  }
+  .wa-strip .wrap{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;
+  }
+  .wa-strip h3{
+    color:var(--cream);font-size:clamp(1.5rem,3vw,2rem);
+    max-width:20ch;font-weight:500;line-height:1.2;
+  }
+  .wa-strip p{color:rgba(248,240,224,.85);margin-top:10px;font-size:1rem;}
+  .wa-strip .btn-ghost{flex-shrink:0;}
+
+  /* ---------- MENU / CARDÁPIO ---------- */
+  .menu-cats{
+    display:flex;gap:10px;flex-wrap:wrap;
+    margin-bottom:40px;
+  }
+  .cat-pill{
+    padding:10px 20px;border-radius:100px;
+    border:1.5px solid var(--sand-2);
+    background:var(--cream);
+    font-size:.92rem;font-weight:500;color:#6b5c47;
+    cursor:pointer;transition:.2s;
+    display:flex;align-items:center;gap:8px;
+  }
+  .cat-pill.active{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal);}
+
+  .menu-group{display:none;}
+  .menu-group.active{display:block;}
+  .menu-grid{
+    display:grid;grid-template-columns:1fr;gap:20px;
+  }
+  @media(min-width:720px){
+    .menu-grid{grid-template-columns:1fr 1fr;}
+  }
+  .item-card{
+    display:flex;gap:18px;
+    background:var(--cream);
+    border:1px solid var(--sand-2);
+    border-radius:var(--radius-sm);
+    padding:16px;
+    align-items:flex-start;
+  }
+  .item-card .thumb{
+    width:88px;height:88px;border-radius:12px;flex-shrink:0;
+    object-fit:cover;background:var(--sand-2);
+  }
+  .item-body{flex:1;min-width:0;}
+  .item-top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;}
+  .item-body h4{font-size:1.08rem;font-weight:600;}
+  .item-price{font-family:var(--serif);color:var(--tomato-dark);font-weight:600;font-size:1.02rem;white-space:nowrap;}
+  .item-desc{font-size:.9rem;color:#786a56;margin-top:6px;line-height:1.5;}
+  .item-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:10px;}
+  .placeholder-badge{
+    font-size:.68rem;font-weight:600;letter-spacing:.02em;
+    color:var(--gold-dim);background:rgba(211,160,74,.12);
+    padding:4px 9px;border-radius:100px;
+  }
+  .item-order{
+    font-size:.82rem;font-weight:600;color:var(--basil);
+    display:flex;align-items:center;gap:5px;
+  }
+  .item-order svg{width:15px;height:15px;}
+
+  .menu-note{
+    margin-top:36px;
+    background:var(--sand-2);
+    border:1px dashed var(--gold-dim);
+    border-radius:var(--radius-sm);
+    padding:18px 20px;
+    font-size:.9rem;color:#5f5341;
+    display:flex;gap:12px;align-items:flex-start;
+  }
+
+  /* ---------- SOBRE ---------- */
+  .about{background:var(--charcoal);color:var(--cream-dim);}
+  .about .tag{color:var(--gold);}
+  .about .tag::before{background:var(--tomato);}
+  .about-grid{
+    display:grid;grid-template-columns:1fr;gap:44px;
+    align-items:center;
+  }
+  @media(min-width:860px){ .about-grid{grid-template-columns:1.1fr 1fr;} }
+  .about h2{color:var(--cream);}
+  .about-text{margin-top:20px;font-size:1.08rem;line-height:1.75;max-width:52ch;color:var(--cream-dim);}
+  .about-photo{
+    border-radius:var(--radius);
+    overflow:hidden;
+    aspect-ratio:4/3.1;
+  }
+  .about-photo img{width:100%;height:100%;object-fit:cover;}
+  .about-stats{display:flex;gap:32px;margin-top:34px;flex-wrap:wrap;}
+  .about-stats div strong{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--gold);font-weight:500;}
+  .about-stats div span{font-size:.85rem;color:var(--cream-dim);}
+
+  /* ---------- GALERIA ---------- */
+  .gallery-grid{
+    display:grid;gap:14px;
+    grid-template-columns:repeat(2,1fr);
+  }
+  @media(min-width:720px){
+    .gallery-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;}
+    .gallery-grid a:nth-child(1){grid-column:span 2;grid-row:span 2;}
+    .gallery-grid a:nth-child(4){grid-column:span 2;}
+  }
+  .gallery-grid img{
+    width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);
+    aspect-ratio:1/1;
+    transition:transform .4s ease;
+  }
+  @media(min-width:720px){.gallery-grid img{aspect-ratio:auto;}}
+  .gallery-grid a{overflow:hidden;border-radius:var(--radius-sm);display:block;}
+  .gallery-grid a:hover img{transform:scale(1.06);}
+  .gallery-note{
+    text-align:center;margin-top:28px;
+    font-family:var(--serif);font-style:italic;color:var(--tomato-dark);font-size:1.05rem;
+  }
+
+  /* ---------- AVALIAÇÕES ---------- */
+  .reviews{background:var(--sand-2);}
+  .review-summary{
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    gap:14px;margin-bottom:44px;
+  }
+  .stars{display:flex;gap:4px;}
+  .stars svg{width:26px;height:26px;fill:var(--gold);}
+  .review-score{font-family:var(--serif);font-size:3.2rem;font-weight:500;color:var(--charcoal);}
+  .review-count{color:#6b5c47;font-size:1rem;}
+  .review-cards{
+    display:grid;grid-template-columns:1fr;gap:18px;
+  }
+  @media(min-width:720px){.review-cards{grid-template-columns:repeat(3,1fr);}}
+  .review-placeholder{
+    background:var(--cream);
+    border:1px dashed var(--gold-dim);
+    border-radius:var(--radius-sm);
+    padding:26px 22px;
+    text-align:center;
+    color:#847557;
+    font-size:.92rem;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .review-placeholder svg{width:24px;height:24px;opacity:.5;}
+
+  .review-card{
+    background:var(--cream);
+    border:1px solid var(--sand-2);
+    border-radius:var(--radius-sm);
+    padding:24px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .review-card-head{display:flex;align-items:center;gap:12px;}
+  .review-avatar{
+    width:42px;height:42px;border-radius:50%;flex-shrink:0;
+    background:var(--gold);color:var(--charcoal);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-weight:600;font-size:1.05rem;
+  }
+  .review-name{font-weight:600;font-size:.95rem;color:var(--charcoal);}
+  .review-date{font-size:.78rem;color:#8a7c64;margin-top:1px;}
+  .review-stars{display:flex;gap:2px;margin-top:2px;}
+  .review-stars svg{width:13px;height:13px;fill:var(--gold);}
+  .review-text{font-size:.9rem;color:#5a4d3e;line-height:1.6;}
+  .review-detail{font-size:.82rem;color:#8a7c64;font-style:italic;}
+  .review-src{
+    margin-top:auto;padding-top:6px;
+    font-size:.72rem;color:#a4937a;
+    display:flex;align-items:center;gap:6px;
+  }
+  .review-src svg{width:13px;height:13px;}
+  .reviews-note{
+    margin-top:30px;
+    background:var(--sand-2);
+    border:1px dashed var(--gold-dim);
+    border-radius:var(--radius-sm);
+    padding:18px 20px;
+    font-size:.85rem;color:#5f5341;
+    text-align:center;
+  }
+
+  /* ---------- LOCALIZAÇÃO ---------- */
+  .location-grid{
+    display:grid;grid-template-columns:1fr;gap:32px;
+  }
+  @media(min-width:860px){.location-grid{grid-template-columns:1fr 1.2fr;align-items:stretch;}}
+  .loc-card{
+    background:var(--charcoal);color:var(--cream-dim);
+    border-radius:var(--radius);padding:34px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    gap:26px;
+  }
+  .loc-card h3{color:var(--cream);font-size:1.4rem;font-weight:500;}
+  .loc-address{margin-top:14px;font-size:1rem;line-height:1.7;color:var(--cream-dim);}
+  .loc-map{
+    border-radius:var(--radius);overflow:hidden;
+    min-height:320px;border:1px solid var(--sand-2);
+  }
+  .loc-map iframe{width:100%;height:100%;min-height:320px;border:0;display:block;}
+
+  /* ---------- HORÁRIO ---------- */
+  .hours{background:var(--sand-2);}
+  .hours-grid{
+    display:grid;grid-template-columns:1fr;gap:18px;
+  }
+  @media(min-width:640px){.hours-grid{grid-template-columns:1fr 1fr;}}
+  .hours-card{
+    background:var(--cream);border-radius:var(--radius-sm);
+    padding:28px;border:1px solid var(--sand-2);
+  }
+  .hours-card.closed{opacity:.75;}
+  .hours-card .day{font-size:.95rem;color:#6b5c47;font-weight:500;}
+  .hours-card .time{font-family:var(--serif);font-size:1.7rem;color:var(--charcoal);margin-top:8px;font-weight:500;}
+  .hours-alert{
+    margin-top:24px;
+    background:var(--tomato);color:var(--cream);
+    border-radius:var(--radius-sm);
+    padding:18px 22px;
+    font-size:.95rem;
+    display:flex;align-items:center;gap:12px;
+  }
+  .hours-alert svg{width:20px;height:20px;flex-shrink:0;}
+
+  /* ---------- CONTATO ---------- */
+  .contact-grid{
+    display:grid;grid-template-columns:1fr;gap:18px;
+  }
+  @media(min-width:720px){.contact-grid{grid-template-columns:repeat(3,1fr);}}
+  .contact-card{
+    background:var(--cream);border:1px solid var(--sand-2);
+    border-radius:var(--radius-sm);padding:28px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .contact-card.primary{background:var(--tomato);border-color:var(--tomato);}
+  .contact-card.primary h4, .contact-card.primary p{color:var(--cream);}
+  .c-icon{
+    width:44px;height:44px;border-radius:12px;
+    background:var(--sand-2);display:flex;align-items:center;justify-content:center;
+  }
+  .contact-card.primary .c-icon{background:rgba(248,240,224,.18);}
+  .c-icon svg{width:22px;height:22px;color:var(--tomato-dark);}
+  .contact-card.primary .c-icon svg{color:var(--cream);}
+  .contact-card h4{font-size:1.05rem;font-weight:600;color:var(--charcoal);}
+  .contact-card p{font-size:.88rem;color:#786a56;line-height:1.5;}
+  .contact-card.muted{opacity:.6;}
+  .contact-card.muted .c-icon svg{color:#a49474;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--charcoal);color:var(--cream-dim);padding:64px 0 28px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1fr;gap:40px;
+    padding-bottom:40px;border-bottom:1px solid rgba(211,160,74,.16);
+  }
+  @media(min-width:780px){.footer-grid{grid-template-columns:1.3fr 1fr 1fr;}}
+  .footer-logo{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--cream);}
+  .footer-logo span{color:var(--gold);font-style:normal;}
+  .footer-col p{color:var(--cream-dim);font-size:.92rem;line-height:1.7;margin-top:16px;max-width:32ch;}
+  .footer-col h5{color:var(--cream);font-size:.82rem;letter-spacing:.03em;font-weight:600;margin-bottom:16px;}
+  .footer-col ul{display:flex;flex-direction:column;gap:11px;}
+  .footer-col a{color:var(--cream-dim);font-size:.92rem;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-bottom{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+    padding-top:26px;font-size:.82rem;color:#a4937a;
+  }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .fab-wa{
+    position:fixed;bottom:22px;right:22px;z-index:900;
+    width:60px;height:60px;border-radius:50%;
+    background:var(--whatsapp);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px -6px rgba(0,0,0,.45);
+    transition:transform .2s ease;
+  }
+  .fab-wa:hover{transform:scale(1.07);}
+  .fab-wa svg{width:30px;height:30px;fill:#fff;}
+
+  @media(min-width:960px){
+    section{padding:120px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">Bello Gusto <span>Ribeirão</span></a>
+    <div class="nav-links">
+      <a href="#inicio">Início</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-primary nav-cta" id="waHeaderBtn" href="#" target="_blank" rel="noopener">
+        Pedir pelo WhatsApp
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <a class="btn btn-primary" id="waMobileBtn" href="#" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="tag">Pizzaria no Jardim Cristo Redentor, Ribeirão Preto</span>
+      <h1>O sabor que merece <em>um lugar</em> à sua mesa.</h1>
+      <p class="hero-text">Pizza preparada para transformar seu momento em uma experiência ainda mais especial.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" id="waHeroBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.2.8.9-3.1-.2-.3C3.6 14.7 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9.3z"/></svg>
+          Pedir pelo WhatsApp
+        </a>
+        <a class="btn btn-outline on-dark" href="#cardapio">Ver cardápio</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>121 avaliações</strong>reconhecida no Google</div>
+        <div><strong>17h – 00h</strong>segunda a sábado</div>
+        <div><strong>Cristo Redentor</strong>Ribeirão Preto - SP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHATSAPP STRIP ================= -->
+<section class="wa-strip">
+  <div class="wrap">
+    <div>
+      <h3>Seu pedido está a poucos cliques de distância.</h3>
+      <p>Faça seu pedido de forma rápida e prática pelo WhatsApp.</p>
+    </div>
+    <a class="btn btn-ghost" id="waStripBtn" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--whatsapp)"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.2.8.9-3.1-.2-.3C3.6 14.7 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9.3z"/></svg>
+      Fazer pedido
+    </a>
+  </div>
+</section>
+
+<!-- ================= CARDÁPIO ================= -->
+<section id="cardapio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Nosso cardápio</span>
+      <h2 class="section-title">Escolha seu sabor favorito.</h2>
+      <p class="section-lead">Os sabores abaixo são um modelo de apresentação, com nomes tradicionais de pizzaria. Preços e o cardápio definitivo serão confirmados pela Bello Gusto Ribeirão.</p>
+    </div>
+
+    <div class="menu-cats">
+      <button class="cat-pill active" data-cat="pizzas">🍕 Pizzas tradicionais</button>
+      <button class="cat-pill" data-cat="especiais">✨ Especiais</button>
+      <button class="cat-pill" data-cat="doces">🍫 Pizzas doces</button>
+      <button class="cat-pill" data-cat="bebidas">🥤 Bebidas</button>
+      <button class="cat-pill" data-cat="sobremesas">🍰 Sobremesas</button>
+    </div>
+
+    <div class="menu-group active" data-group="pizzas">
+      <div class="menu-grid">
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=200&q=70" alt="Pizza Margherita - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Margherita</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Molho de tomate, muçarela, manjericão fresco e um toque de parmesão.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=200&q=70" alt="Pizza Calabresa - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Calabresa</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Molho de tomate, muçarela, calabresa fatiada e cebola roxa.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1571066811602-716837d681de?auto=format&fit=crop&w=200&q=70" alt="Pizza Portuguesa - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Portuguesa</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Presunto, ovos, cebola, azeitona, ervilha e muçarela.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=200&q=70" alt="Pizza Quatro Queijos - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Quatro queijos</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Muçarela, catupiry, gorgonzola e parmesão.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=200&q=70" alt="Pizza Frango com Catupiry - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Frango com catupiry</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Frango desfiado, catupiry cremoso e muçarela.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?auto=format&fit=crop&w=200&q=70" alt="Pizza Vegetariana - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Vegetariana</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Brócolis, palmito, milho, ervilha e muçarela.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-group" data-group="especiais">
+      <div class="menu-grid">
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=200&q=70" alt="Pizza especial - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Rúcula com parma</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Presunto parma, rúcula fresca, tomate seco e lascas de parmesão.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?auto=format&fit=crop&w=200&q=70" alt="Pizza especial - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Salmão com cream cheese</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Salmão defumado, cream cheese e alho-poró levemente salteado.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=200&q=70" alt="Pizza especial - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Filé ao molho madeira</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Cubos de filé mignon, champignon fatiado e molho madeira.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=200&q=70" alt="Pizza especial - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Pera com gorgonzola</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Fatias de pera caramelizada, gorgonzola e um fio de mel.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-group" data-group="doces">
+      <div class="menu-grid">
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=200&q=70" alt="Pizza doce - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Chocolate com morango</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Chocolate ao leite derretido e morangos frescos fatiados.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=200&q=70" alt="Pizza doce - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Banana com canela</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Banana caramelizada, canela em pó e um toque de açúcar.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=200&q=70" alt="Pizza doce - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Romeu e julieta</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Muçarela derretida e generosa camada de goiabada.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-group" data-group="bebidas">
+      <div class="menu-grid">
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=200&q=70" alt="Bebida - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Refrigerante lata</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">350ml, sabores a definir.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=200&q=70" alt="Bebida - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Refrigerante 2 litros</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Garrafa de 2 litros, sabores a definir.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=200&q=70" alt="Bebida - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Água mineral</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Com ou sem gás, 500ml.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=200&q=70" alt="Bebida - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Suco natural</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Sabores da estação, feito na hora.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-group" data-group="sobremesas">
+      <div class="menu-grid">
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=200&q=70" alt="Sobremesa - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Petit gateau</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Bolo de chocolate com recheio cremoso, servido quente com sorvete.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+        <div class="item-card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=200&q=70" alt="Sobremesa - imagem ilustrativa">
+          <div class="item-body">
+            <div class="item-top"><h4>Pudim de leite</h4><span class="item-price">R$ 00,00</span></div>
+            <p class="item-desc">Pudim cremoso tradicional com calda de caramelo.</p>
+            <div class="item-foot"><span class="placeholder-badge">Modelo — editável</span><span class="item-order">Pedir<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-note">
+      <span>📋</span>
+      <span>Este cardápio é uma demonstração de layout, com sabores tradicionais de pizzaria. Nomes, descrições, preços e fotos reais da Bello Gusto Ribeirão serão adicionados antes da publicação.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div>
+      <span class="tag">Bello Gusto Ribeirão</span>
+      <h2 class="section-title">Uma pizzaria de bairro, feita para o seu dia a dia.</h2>
+      <p class="about-text">Uma opção para quem busca uma boa pizza em Ribeirão Preto, com atendimento próximo e a praticidade de fazer seu pedido pelo WhatsApp.</p>
+      <div class="about-stats">
+        <div><strong>121</strong><span>avaliações no Google</span></div>
+        <div><strong>6</strong><span>dias de funcionamento por semana</span></div>
+        <div><strong>100%</strong><span>pedidos via WhatsApp</span></div>
+      </div>
+    </div>
+    <div class="about-photo">
+      <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=900&q=80" alt="Pizza recém-assada - imagem ilustrativa">
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIA ================= -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="tag">Galeria</span>
+      <h2 class="section-title">Um gostinho do que vem por aí.</h2>
+      <p class="section-lead">Imagens ilustrativas usadas apenas nesta demonstração.</p>
+    </div>
+    <div class="gallery-grid">
+      <a href="#"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80" alt="Pizza - imagem ilustrativa"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?auto=format&fit=crop&w=600&q=80" alt="Pizza - imagem ilustrativa"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=600&q=80" alt="Pizza - imagem ilustrativa"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1571066811602-716837d681de?auto=format&fit=crop&w=900&q=80" alt="Pizza - imagem ilustrativa"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=600&q=80" alt="Pizza - imagem ilustrativa"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Pizza - imagem ilustrativa"></a>
+    </div>
+    <p class="gallery-note">Em breve, fotos reais da Bello Gusto Ribeirão.</p>
+  </div>
+</section>
+
+<!-- ================= AVALIAÇÕES ================= -->
+<section class="reviews" id="avaliacoes">
+  <div class="wrap">
+    <div class="review-summary">
+      <span class="tag">O que os clientes acham</span>
+      <div class="review-score">4,2</div>
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+        <svg viewBox="0 0 20 20" style="opacity:.35"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+      </div>
+      <div class="review-count">com base em 121 avaliações no Google</div>
+    </div>
+    <div class="review-cards">
+      <div class="review-card">
+        <div class="review-card-head">
+          <div class="review-avatar">B</div>
+          <div>
+            <div class="review-name">Bruna Sorati</div>
+            <div class="review-date">7 meses atrás</div>
+          </div>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+        </div>
+        <div class="review-detail">Avaliou comida, atendimento e ambiente com nota máxima.</div>
+        <div class="review-src">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Avaliação real no Google
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-head">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Maiara Santos</div>
+            <div class="review-date">há 1 ano</div>
+          </div>
+        </div>
+        <div class="review-detail">Jantou no local · Tíquete médio de R$ 80–100 por pessoa.</div>
+        <div class="review-src">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Avaliação real no Google
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-head">
+          <div class="review-avatar">J</div>
+          <div>
+            <div class="review-name">Jessica Passos Alves</div>
+            <div class="review-date">1 mês atrás</div>
+          </div>
+        </div>
+        <p class="review-text">"A comida agradou, mas o delivery demorou bastante e o pedido chegou frio."</p>
+        <div class="review-detail">Pedido via delivery, almoço.</div>
+        <div class="review-src">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Avaliação real no Google
+        </div>
+      </div>
+    </div>
+    <p class="reviews-note">Estas são avaliações reais do Google, inseridas manualmente nesta demonstração. Para manter essa seção sempre atualizada de forma automática, é possível integrar a API do Google Places ou um widget de avaliações.</p>
+  </div>
+</section>
+
+<!-- ================= LOCALIZAÇÃO ================= -->
+<section id="localizacao">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Onde estamos</span>
+      <h2 class="section-title">Fácil de chegar, fácil de pedir.</h2>
+    </div>
+    <div class="location-grid">
+      <div class="loc-card">
+        <div>
+          <h3>Bello Gusto Ribeirão</h3>
+          <p class="loc-address">
+            Av. Maximilliam Maggioni, 512<br>
+            Jardim Cristo Redentor<br>
+            Ribeirão Preto - SP<br>
+            14063-160
+          </p>
+        </div>
+        <a class="btn btn-outline on-dark" id="mapsBtn" href="#" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+      <div class="loc-map">
+        <iframe
+          src="https://www.google.com/maps?q=Av.+Maximilliam+Maggioni,+512+-+Jardim+Cristo+Redentor,+Ribeir%C3%A3o+Preto+-+SP,+14063-160&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa - localização da Bello Gusto Ribeirão">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HORÁRIO ================= -->
+<section class="hours">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Horário de funcionamento</span>
+      <h2 class="section-title">Saiba a hora certa de pedir.</h2>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-card">
+        <div class="day">Segunda a sábado</div>
+        <div class="time">17h — 00h</div>
+      </div>
+      <div class="hours-card closed">
+        <div class="day">Domingos e feriados</div>
+        <div class="time">Fechado</div>
+      </div>
+    </div>
+    <div class="hours-alert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Faça seu pedido dentro do nosso horário de atendimento.
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section id="contato">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="tag">Fale com a Bello Gusto</span>
+      <h2 class="section-title">Estamos a uma mensagem de distância.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card primary">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.2.8.9-3.1-.2-.3C3.6 14.7 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9.3z"/></svg>
+        </div>
+        <h4>WhatsApp</h4>
+        <p>(16) 99131-9973</p>
+        <a class="btn btn-ghost" id="waContactBtn" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+      <div class="contact-card muted">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h4>Telefone fixo</h4>
+        <p>Campo reservado para um número adicional, caso a Bello Gusto queira disponibilizar.</p>
+      </div>
+      <div class="contact-card muted">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </div>
+        <h4>Instagram</h4>
+        <p>Perfil ainda não disponível. Espaço preparado para quando a Bello Gusto criar sua conta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#top" class="footer-logo">Bello Gusto <span>Ribeirão</span></a>
+        <p>Pizzaria no Jardim Cristo Redentor, Ribeirão Preto - SP. Peça pelo WhatsApp, de segunda a sábado.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+          <li id="waFooterWrap"><a id="waFooterBtn" href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li>Av. Maximilliam Maggioni, 512</li>
+          <li>Jardim Cristo Redentor</li>
+          <li>Ribeirão Preto - SP, 14063-160</li>
+          <li>(16) 99131-9973</li>
+          <li>Seg a sáb: 17h às 00h</li>
+          <li>Dom e feriados: fechado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Bello Gusto Ribeirão. Site demonstrativo.</span>
+      <span>Ribeirão Preto - SP</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a class="fab-wa" id="waFab" href="#" target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.2.8.9-3.1-.2-.3C3.6 14.7 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9.3z"/></svg>
+</a>
+
+<script>
+  // WhatsApp link setup
+  const phone = "5516991319973";
+  const msg = encodeURIComponent("Olá! Vim pelo site da Bello Gusto Ribeirão e gostaria de fazer um pedido.");
+  const waLink = `https://wa.me/${phone}?text=${msg}`;
+  ["waHeaderBtn","waMobileBtn","waHeroBtn","waStripBtn","waContactBtn","waFooterBtn","waFab"].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.href = waLink;
+  });
+
+  // Google Maps directions link
+  const mapsBtn = document.getElementById("mapsBtn");
+  if(mapsBtn){
+    mapsBtn.href = "https://www.google.com/maps/dir/?api=1&destination=" +
+      encodeURIComponent("Av. Maximilliam Maggioni, 512 - Jardim Cristo Redentor, Ribeirão Preto - SP, 14063-160");
+  }
+
+  // Mobile menu toggle
+  const burger = document.getElementById("burgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  burger.addEventListener("click", ()=>{
+    const open = mobileMenu.classList.toggle("open");
+    burger.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open);
+  });
+  document.querySelectorAll(".mobile-menu a").forEach(a=>{
+    a.addEventListener("click", ()=>{
+      mobileMenu.classList.remove("open");
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded","false");
+    });
+  });
+
+  // Menu category tabs
+  document.querySelectorAll(".cat-pill").forEach(pill=>{
+    pill.addEventListener("click", ()=>{
+      document.querySelectorAll(".cat-pill").forEach(p=>p.classList.remove("active"));
+      document.querySelectorAll(".menu-group").forEach(g=>g.classList.remove("active"));
+      pill.classList.add("active");
+      document.querySelector(`.menu-group[data-group="${pill.dataset.cat}"]`).classList.add("active");
+    });
+  });
+
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Graceful image fallback
+  document.querySelectorAll("img").forEach(img=>{
+    img.addEventListener("error", ()=>{
+      img.style.background = "linear-gradient(135deg,#efe6d3,#e4d8bd)";
+      img.style.minHeight = "80px";
+    }, {once:true});
+  });
+</script>
+
+</body>
+</html>
